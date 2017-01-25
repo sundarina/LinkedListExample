@@ -13,7 +13,7 @@ public class CPoint {
 	}
 	
 	//конструктор копирования 
-	//дубликат точки 
+	//дубликат точки djl
 	
 	//ссылка на существующую точку
 	//извлекаем свои же параметры для внешнего использования
@@ -42,6 +42,6 @@ public class CPoint {
 	@Override 
 	public String toString() {
 	
-		return "CPoint: x = " + x + ", y = " + y;
+		return "x = " + x + ", y = " + y;
 	}
 }

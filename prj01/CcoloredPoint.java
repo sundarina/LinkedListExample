@@ -17,6 +17,8 @@ public class CcoloredPoint extends CPoint {
 	//	localpoint = point; //треб констр родительского класса
 		this.color = color;
 	}
+	
+
 
 	public int getColor() {
 		return color;
@@ -28,7 +30,7 @@ public class CcoloredPoint extends CPoint {
 
 	@Override
 	public String toString() {
-		return "CcolorPoint x = " + super.getX() + " y = " + this.getY() + ", color = " + color;
+		return "CcoloredPoint x = " + super.getX() + " y = " + this.getY() + ", color = " + color;
 		// чтото с родительского, чтото с этого
 		// getY() this будет неявное this
 	}
