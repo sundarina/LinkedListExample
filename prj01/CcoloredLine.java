@@ -1,7 +1,6 @@
 
-
 public class CcoloredLine extends CLine {
-	;
+
 	private int color;
 
 	public CcoloredLine(int x1, int y1, int x2, int y2, int color) {

@@ -1,5 +1,3 @@
-import java.awt.Point;
-
 public class MainFigures {
 
 	public static void main(String[] args) {
@@ -30,13 +28,14 @@ public class MainFigures {
 		System.out.println(ccl3);
 
 		TriangleClass ctr1 = new TriangleClass(cp1, new CPoint(3, 4), new CPoint(cp3));
-		TriangleClass ctr2 =  new TriangleClass(cl1, cl2, ccl2);
-		//System.out.println(ctr1);
+		TriangleClass ctr2 = new TriangleClass(cl1, cl2, ccl2);
+		// System.out.println(ctr1);
 		System.out.println(ctr2);
-		
+
 		ColorTriangle colorT = new ColorTriangle(cl2, new CLine(cl1.getStart(), cl3.getEnd()), cl1, ccl1.getColor());
 		System.out.println(colorT);
-		ColorTriangle colorT2 = new ColorTriangle(colorT.getSideAB(), colorT.getSideBC(), colorT.getSideCA(), ccp3.getColor());
+		ColorTriangle colorT2 = new ColorTriangle(colorT.getSideAB(), colorT.getSideBC(), colorT.getSideCA(),
+				ccp3.getColor());
 		System.out.println(colorT2);
 	}
 

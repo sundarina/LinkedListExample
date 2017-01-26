@@ -22,8 +22,8 @@ public class TriangleClass {
 	// singleton
 
 	public CLine getSideAB() {
-		if (sideAB == null) { // если ссылка на сторону пустая - создаем, если
-								// нет - возвращаем адрес существующей стороны
+		if (sideAB == null) { // если ссылка на сторону пустая - создаем, если  нет - возвращаем адрес существующей стороны
+								
 			sideAB = new CLine(apexA, apexB);
 		}
 		return sideAB;

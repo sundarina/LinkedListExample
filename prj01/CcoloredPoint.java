@@ -31,8 +31,6 @@ public class CcoloredPoint extends CPoint {
 	@Override
 	public String toString() {
 		return "CcoloredPoint x = " + super.getX() + " y = " + this.getY() + ", color = " + color;
-		// чтото с родительского, чтото с этого
-		// getY() this будет неявное this
 	}
 
 }
