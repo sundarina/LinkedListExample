@@ -1,4 +1,4 @@
-package prj01;
+
 
 public class CcoloredPoint extends CPoint {
 

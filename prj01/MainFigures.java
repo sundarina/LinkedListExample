@@ -1,11 +1,11 @@
-package prj01;
+import java.awt.Point;
 
 public class MainFigures {
 
 	public static void main(String[] args) {
 		CPoint cp1 = new CPoint(0, 0);
 		CPoint cp2 = new CPoint(1, 1);
-		CPoint cp3 = new CPoint(6,6);
+		CPoint cp3 = new CPoint(6, 6);
 		// cсылка храниться в стеке Stack, экземпляр храниться в HEAP (куче)
 		System.out.println(cp1); // автовызов метода toString()
 		CcoloredPoint ccp1 = new CcoloredPoint(1, 1, 333333);
@@ -14,12 +14,12 @@ public class MainFigures {
 		CcoloredPoint ccp3 = new CcoloredPoint(new CPoint(1, 2), 444444);
 		CLine cl1 = new CLine(1, 1, 2, 2); // композиция
 		CLine cl2 = new CLine(cp1, cp2);
-		CLine cl3 = new CLine(new CPoint(3, 3), new CPoint(4, 4)); 
+		CLine cl3 = new CLine(new CPoint(3, 3), new CPoint(4, 4));
 		/*
 		 * формально - по ссылке, по выделению памяти и жизни - то удалиться
 		 * вместе с линией
 		 */
-		
+
 		System.out.println(cl3);
 
 		CcoloredLine ccl1 = new CcoloredLine(cl1, 555555);
@@ -28,10 +28,12 @@ public class MainFigures {
 		System.out.println(ccl2);
 		CcoloredLine ccl3 = new CcoloredLine(new CcoloredPoint(cp3, 77777), new CcoloredPoint(3, 3, 666666), 898891);
 		System.out.println(ccl3);
-		
-	
-		
-		
+
+		TriangleClass ctr1 = new TriangleClass(cp1, new CPoint(3, 4), new CPoint(cp3));
+		TriangleClass ctr2 =  new TriangleClass(cl1, cl2, ccl2);
+		//System.out.println(ctr1);
+		System.out.println(ctr2);
+
 	}
 
 }
