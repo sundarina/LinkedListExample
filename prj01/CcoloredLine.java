@@ -1,5 +1,5 @@
 
-public class CcoloredLine extends CLine {
+public class CcoloredLine extends CLine implements Figure, ColorAble{
 
 	private int color;
 

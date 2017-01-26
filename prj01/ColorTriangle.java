@@ -1,5 +1,5 @@
 
-public class ColorTriangle extends TriangleClass{
+public class ColorTriangle extends TriangleClass implements Figure, ColorAble {
 
 	private int color;
 	
@@ -26,6 +26,7 @@ public class ColorTriangle extends TriangleClass{
 	public String toString() {
 		return "COLOR Triangle A " + super.getSideAB() + ", B " + super.getSideBC()+ ", C " + super.getSideCA() + " Color: " + color;
 	}
+	
 	
 
 }

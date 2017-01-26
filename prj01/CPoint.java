@@ -1,4 +1,4 @@
-public class CPoint { 
+public class CPoint implements Figure { 
 
 	private int x;
 	private int y;
@@ -42,5 +42,11 @@ public class CPoint {
 	public String toString() {
 	
 		return "x = " + x + ", y = " + y;
+	}
+
+	@Override
+	public void display() {
+	System.out.println(this); //напечатает return "x = " + x + ", y = " + y;
+		
 	}
 }

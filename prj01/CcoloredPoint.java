@@ -1,6 +1,6 @@
 
 
-public class CcoloredPoint extends CPoint {
+public class CcoloredPoint extends CPoint implements ColorAble{
 
 	private int color;
 
