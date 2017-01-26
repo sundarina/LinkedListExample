@@ -1,5 +1,3 @@
-
-
 public class CPoint { 
 
 	private int x;
