@@ -22,6 +22,10 @@ public class ColorTriangle extends TriangleClass{
 		this.color = color;
 	}
 	
+	@Override
+	public String toString() {
+		return "COLOR Triangle A " + super.getSideAB() + ", B " + super.getSideBC()+ ", C " + super.getSideCA() + " Color: " + color;
+	}
 	
 
 }
