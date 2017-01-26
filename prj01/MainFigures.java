@@ -33,7 +33,11 @@ public class MainFigures {
 		TriangleClass ctr2 =  new TriangleClass(cl1, cl2, ccl2);
 		//System.out.println(ctr1);
 		System.out.println(ctr2);
-
+		
+		ColorTriangle colorT = new ColorTriangle(cl2, new CLine(cl1.getStart(), cl3.getEnd()), cl1, ccl1.getColor());
+		System.out.println(colorT);
+		ColorTriangle colorT2 = new ColorTriangle(colorT.getSideAB(), colorT.getSideBC(), colorT.getSideCA(), ccp3.getColor());
+		System.out.println(colorT2);
 	}
 
 }
