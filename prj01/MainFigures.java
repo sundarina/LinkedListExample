@@ -1,5 +1,8 @@
+
 abstract class AbstractFigureFabric {
+	
 	public abstract Figure rand();
+	
 	public abstract Figure getFigure(int n);
 }
 
@@ -36,7 +39,6 @@ class FigureFabric extends AbstractFigureFabric {
 			switch (n) {
 			case 0: return new CPoint(0,0);
 			case 1 : return new CLine(1,2,3,4);
-		
 			default: return null;
 			}
 		}
@@ -56,46 +58,38 @@ public class MainFigures {
 
 	public static void main(String[] args) {
 
-		CPoint cp1 = new CPoint(0, 0);
-		CPoint cp2 = new CPoint(1, 1);
-		CPoint cp3 = new CPoint(6, 6);
+		CPoint point1 = new CPoint(0, 0);
+		CPoint point2 = new CPoint(1, 1);
+		CPoint point3 = new CPoint(6, 6);
+		
 		// cсылка храниться в стеке Stack, экземпляр храниться в HEAP (куче)
-	//	System.out.println(cp1); // автовызов метода toString()
-		CcoloredPoint ccp1 = new CcoloredPoint(1, 1, 333333);
-	//	System.out.println(ccp1);
-		CcoloredPoint ccp2 = new CcoloredPoint(cp1, 222222);
-		CcoloredPoint ccp3 = new CcoloredPoint(new CPoint(1, 2), 444444);
+		//	System.out.println(cp1); // автовызов метода toString()
+		
+		CcoloredPoint colorPoint1 = new CcoloredPoint(1, 1, 333333);
+		CcoloredPoint colorPoint2 = new CcoloredPoint(point1, 222222);
+		CcoloredPoint colorPoint3 = new CcoloredPoint(new CPoint(1, 2), 444444);
 
-		CLine cl1 = new CLine(1, 1, 2, 2); // композиция
-		CLine cl2 = new CLine(cp1, cp2);
-		CLine cl3 = new CLine(new CPoint(3, 3), new CPoint(4, 4));
+		CLine line1 = new CLine(1, 1, 2, 2); // композиция
+		CLine line2 = new CLine(point1, point2);
+		CLine line3 = new CLine(new CPoint(3, 3), new CPoint(4, 4));
 		/*
 		 * формально - по ссылке, по выделению памяти и жизни - то удалиться
 		 * вместе с линией
 		 */
 
-		//System.out.println(cl3);
+		CcoloredLine colorLine1 = new CcoloredLine(line1, 555555);
+		CcoloredLine colorLine2 = new CcoloredLine(point1, point2, 398948);
+		CcoloredLine colorLine3 = new CcoloredLine(new CcoloredPoint(point3, 77777), new CcoloredPoint(3, 3, 666666), 898891);
+		
+		TriangleClass triangle1 = new TriangleClass(point1, new CPoint(3, 4), new CPoint(point3));
+		TriangleClass triangle2 = new TriangleClass(line1, line2, colorLine2);
+	
+		ColorTriangle colorTriangle1 = new ColorTriangle(line2, new CLine(line1.getStart(), line3.getEnd()), line1, colorLine1.getColor());
+		ColorTriangle colorTriangle2 = new ColorTriangle(colorTriangle1.getSideAB(), colorTriangle1.getSideBC(), colorTriangle1.getSideCA(),
+				colorPoint3.getColor());
 
-		CcoloredLine ccl1 = new CcoloredLine(cl1, 555555);
-		//System.out.println(ccl1);
-		CcoloredLine ccl2 = new CcoloredLine(cp1, cp2, 398948);
-		//System.out.println(ccl2);
-		CcoloredLine ccl3 = new CcoloredLine(new CcoloredPoint(cp3, 77777), new CcoloredPoint(3, 3, 666666), 898891);
-		//System.out.println(ccl3);
-
-		TriangleClass ctr1 = new TriangleClass(cp1, new CPoint(3, 4), new CPoint(cp3));
-		TriangleClass ctr2 = new TriangleClass(cl1, cl2, ccl2);
-		// System.out.println(ctr1);
-		//System.out.println(ctr2);
-
-		ColorTriangle colorT = new ColorTriangle(cl2, new CLine(cl1.getStart(), cl3.getEnd()), cl1, ccl1.getColor());
-		//System.out.println(colorT);
-		ColorTriangle colorT2 = new ColorTriangle(colorT.getSideAB(), colorT.getSideBC(), colorT.getSideCA(),
-				ccp3.getColor());
-		//System.out.println(colorT2);
-
-		TriangleClass tri = new TriangleClass(cp1, cp2, new CPoint(3, 3));
-		tri.lengthAB();
+		TriangleClass triangle3 = new TriangleClass(point1, point2, new CPoint(3, 3));
+		triangle3.lengthAB();
 
 		Figure[] masFig = new Figure[100]; /*
 											 * обьединение под общим
@@ -118,10 +112,10 @@ public class MainFigures {
 //		masCPoint[2] = cl1;
 //		masCPoint[3] = tri;
 
-		int countColor = 0;
+		int countColorAble = 0;
 
-		CcoloredPoint colorpoint = new CcoloredPoint(cp1, 123456);
-		System.out.println(colorpoint);
+		CcoloredPoint colorPoint = new CcoloredPoint(point1, 123456);
+		System.out.println(colorPoint);
 
 		ColorAble[] masColor = new ColorAble[10];
 		
@@ -130,12 +124,11 @@ public class MainFigures {
 			System.out.println(figure.toString() + " instatce " + figure.getClass().getName());
 			print(figure);
 			if (figure instanceof ColorAble)
-				masColor[countColor++] = (ColorAble)figure;
+				masColor[countColorAble++] = (ColorAble)figure;
 		}
-		masColor[0] = new CcoloredPoint(ccp2, 23456);
-
-//		masColor[1] = new CcoloredLine(ccp1, ccp2, 485857);
-//		masColor[2] = ccp3;
+		//	masColor[0] = new CcoloredPoint(colorPoint2, 23456);
+		//	masColor[1] = new CcoloredLine(ccp1, ccp2, 485857);
+		//	masColor[2] = ccp3;
 
 		int countPoint = 0;
 		CPoint [] masPoint = new CPoint[10];
@@ -146,5 +139,5 @@ public class MainFigures {
 		}
 		
 	}
-
+ 
 }
