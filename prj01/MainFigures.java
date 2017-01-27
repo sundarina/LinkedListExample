@@ -126,7 +126,7 @@ public class MainFigures {
 			if (figure instanceof ColorAble)
 				masColor[countColorAble++] = (ColorAble)figure;
 		}
-		//	masColor[0] = new CcoloredPoint(colorPoint2, 23456);
+			masColor[0] = new CcoloredPoint(colorPoint2, 23456);
 		//	masColor[1] = new CcoloredLine(ccp1, ccp2, 485857);
 		//	masColor[2] = ccp3;
 
