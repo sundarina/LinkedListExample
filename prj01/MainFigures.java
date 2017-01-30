@@ -126,7 +126,7 @@ public class MainFigures {
 			if (figure instanceof ColorAble)
 				masColor[countColorAble++] = (ColorAble)figure;
 		}
-			masColor[0] = new CcoloredPoint(colorPoint2, 23456);
+		//	masColor[0] = new CcoloredPoint(colorPoint2, 23456);
 		//	masColor[1] = new CcoloredLine(ccp1, ccp2, 485857);
 		//	masColor[2] = ccp3;
 
@@ -134,9 +134,12 @@ public class MainFigures {
 		CPoint [] masPoint = new CPoint[10];
 		for (Figure figure : masFig) {
 			System.out.println(figure.toString() + " instatce " + figure.getClass().getName());
-			if (figure instanceof CPoint)
+			if (figure instanceof CPoint){
 				masPoint[countPoint++] = (CPoint)figure;
+				countPoint++;
+			}
 		}
+		
 		
 	}
  
